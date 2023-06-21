@@ -160,8 +160,9 @@ class _LiveTranslateState extends State<LiveTranslate> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffe4edfe),
+      backgroundColor: const Color(0xffe4edfe),
       appBar: AppBar(
+        backgroundColor: Color(0xff85a2d2),
         title: const Text("Live Converse"),
         actions: [
           IconButton(
@@ -175,10 +176,12 @@ class _LiveTranslateState extends State<LiveTranslate> {
           )
         ],
       ),
-      bottomNavigationBar: Container(
+      bottomNavigationBar: SizedBox(
         width: double.infinity,
         height: 60,
         child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xff85a2d2)),
             onPressed: () {
               setState(() {
                 translate = !translate;

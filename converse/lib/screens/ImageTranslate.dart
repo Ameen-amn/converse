@@ -100,6 +100,7 @@ class _ImageTranslateState extends State<ImageTranslate> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(0xff85a2d2),
         title: const Text("Image Converse"),
         centerTitle: true,
         actions: [
@@ -115,6 +116,9 @@ class _ImageTranslateState extends State<ImageTranslate> {
         width: double.infinity,
         height: 60,
         child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Color(0xff85a2d2),
+            ),
             onPressed: () {
               classifyimage(_selectedImage!);
             },
