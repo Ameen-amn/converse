@@ -1,11 +1,18 @@
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:converse/screens/ImageTranslate.dart';
+import 'package:converse/screens/liveTranslate.dart';
 import 'package:flutter/material.dart';
-
-import '../screens/ImageTranslate.dart';
-import '../screens/liveTranslate.dart';
 
 class SelectScreen extends StatelessWidget {
   static const routeName = '/SelectScreen';
-  const SelectScreen({super.key});
+  SelectScreen({super.key});
+
+  List<String> imageList = [
+    'assets/images/A.jpg',
+    'assets/images/B.jpg',
+    'assets/images/C.png',
+    'assets/images/V.png',
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -16,11 +23,41 @@ class SelectScreen extends StatelessWidget {
         centerTitle: true,
       ),
       backgroundColor: const Color(0xffe4edfe),
-      body: Container(),
-      bottomNavigationBar: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
+      body: Column(
         children: [
+          Container(
+            /*      color: Colors.black,
+            width: 500,
+            height: 500, */
+            decoration: BoxDecoration(
+                border: Border.all(
+              width: 5,
+              color: Colors.white,
+            )),
+            margin: EdgeInsets.symmetric(
+              horizontal: 20,
+              vertical: 20,
+            ),
+            child: CarouselSlider(
+              items: imageList.map((e) {
+                return Builder(builder: (BuildContext ctx) {
+                  return Container(
+                    width: double.infinity,
+                    height: 250,
+                    margin: EdgeInsets.symmetric(horizontal: 20),
+                    child: Image.asset(
+                      e,
+                      fit: BoxFit.contain,
+                    ),
+                  );
+                });
+              }).toList(),
+              options: CarouselOptions(
+                height: 250,
+                autoPlay: true,
+              ),
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(
               horizontal: 20,
@@ -57,6 +94,11 @@ class SelectScreen extends StatelessWidget {
           ),
         ],
       ),
+      /*   bottomNavigationBar: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [],
+      ), */
     );
   }
 }

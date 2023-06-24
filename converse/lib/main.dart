@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         "/": (_) => const SplashScreen(),
-        SelectScreen.routeName: (_) => const SelectScreen(),
+        SelectScreen.routeName: (_) => SelectScreen(),
         LiveTranslate.routeName: (_) => const LiveTranslate(),
         ImageTranslate.routeName: (_) => const ImageTranslate(),
       },
